@@ -1,0 +1,93 @@
+body {
+    font-family: 'Merriweather', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e1eec3, #f05053);
+  }
+  
+  .old-calendar {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #d32f2f;
+    text-shadow: 2px 2px #fae;
+    margin: 20px;
+  }
+  
+  @keyframes snowfall {
+    from {
+        transform: translateY(0);
+    }
+  
+    to {
+        transform: translateY(100vh);
+    }
+  }
+  
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    font-size: 1rem;
+    color: white;
+    animation: snowfall 10s linear infinite;
+    opacity: 0.8;
+  }
+  
+  .snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+  }
+  
+  .snowflake:nth-child(2) {
+    left: 20%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+  }
+  
+  .snowflake:nth-child(3) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+  }
+  
+  .snowflake:nth-child(4) {
+    left: 40%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+  }
+  
+  .snowflake:nth-child(5) {
+    left: 50%;
+    animation-duration: 16s;
+    animation-delay: 8s;
+  }
+  
+  .snowflake:nth-child(6) {
+    left: 60%;
+    animation-duration: 18s;
+    animation-delay: 10s;
+  }
+  
+  .snowflake:nth-child(7) {
+    left: 70%;
+    animation-duration: 20s;
+    animation-delay: 12s;
+  }
+  
+  .snowflake:nth-child(8) {
+    left: 80%;
+    animation-duration: 22s;
+    animation-delay: 14s;
+  }
+  
+  .snowflake:nth-child(9) {
+    left: 90%;
+    animation-duration: 24s;
+    animation-delay: 16s;
+  }
