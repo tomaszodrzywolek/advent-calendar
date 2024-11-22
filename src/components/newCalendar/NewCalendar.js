@@ -21,7 +21,7 @@ export function NewCalendar() {
 
     const handleOpenDoor = id => {
         const updatedDoors = doors.map(door =>
-            door.id === id ? (door.open ? door : {...door, open: !door.open}) : door
+            door.id === id ? {...door, open: !door.open} : door
         );
         setDoors(updatedDoors);
     }
