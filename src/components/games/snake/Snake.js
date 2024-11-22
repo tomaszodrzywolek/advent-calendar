@@ -1,3 +1,4 @@
+import GameOver from '../tic_tac_toe/GameOver';
 import './Snake.css';
 import React from 'react';
 
@@ -9,6 +10,11 @@ const start = {
     food: [200, 70],
     score: 0
 };
+
+let winner = undefined;
+
+function deriveWinner() {
+  }
 
 class SnakeGame extends React.Component {
     constructor(props) {
@@ -68,6 +74,7 @@ class SnakeGame extends React.Component {
                 if (val.toString() == newHead.toString()) {
                     // Head has collided with body
                     //   console.log('collide');
+                    winner = {winnerName: 'Daria', symbol: 'X'};
                     this.startStop(true);
                 }
             }
@@ -205,6 +212,7 @@ class SnakeGame extends React.Component {
                     />
                 ))}
                 <Food top={food[1]} left={food[0]} />
+                {(winner) && <GameOver winner={winner} onReset={() => {this.startStop(true)}} openingCode={123} />}
             </div>
         );
     }
@@ -220,9 +228,6 @@ class Score extends React.Component {
             <div className="score">
                 <span>
                     Score: <strong>{this.props.score}</strong>
-                </span>
-                <span>
-                    High Score: <strong>{this.props.high_score}</strong>
                 </span>
             </div>
         );
