@@ -1,10 +1,10 @@
 import './Door.css'
 import { StyledDoor } from './DoorStyles';
 
-const Door = ({ doorData: { id, nr, text, img, open }, handleClick, openModal }) => {
+const Door = ({ doorData: { id, nr, text, img, open, code }, handleClick, openModal }) => {
 
     function launchGame() {
-        openModal(id)
+        openModal(id, code)
     }
 
 

@@ -3,12 +3,12 @@ import SnakeGame from './games/SnakeGame';
 import './Modal.css';
 import MainGame from './games/tic_tac_toe/MainGame';
 
-function Modal({ closeModal, doorId }) {
+function Modal({ closeModal, doorId, openingCode }) {
 
 
 
   const ticTacToe = (
-    <MainGame />
+    <MainGame openingCode={openingCode} />
   );
 
   const snakeGame = (<>

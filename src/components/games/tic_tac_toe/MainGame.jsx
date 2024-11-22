@@ -39,6 +39,7 @@ function deriveGameBoard(gameTurns) {
 
 function deriveWinner(gameBoard, players) {
   let winner = '';
+  let symbol = '';
 
   for (const combination of WINNING_COMBINATIONS) {
     const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column];
@@ -47,14 +48,15 @@ function deriveWinner(gameBoard, players) {
 
     if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol) {
       winner = players[firstSquareSymbol];
+      symbol = firstSquareSymbol;
     }
   }
-  return winner;
+  return winner ? {winnerName: winner, symbol: symbol} : undefined;
 }
 
 let isNotAllowedToSelectSquare = false;
 
-function MainGame() {
+function MainGame({ openingCode }) {
 
   const [players, setPlayers] = useState(PLAYERS);
   const [gameTurns, setGameTurns] = useState([]);
@@ -104,7 +106,7 @@ function MainGame() {
           <Player initialPlayerName={players.X} symbol="X" isActive={currentPlayer === 'X'} onChangeName={handlePlayerNameChange} />
           <Player initialPlayerName={players.O} symbol="O" isActive={currentPlayer === 'O'} onChangeName={handlePlayerNameChange} />
         </ol>
-        {(winner || hasDraw) && <GameOver winner={winner} onReset={restartGame} />}
+        {(winner || hasDraw) && <GameOver winner={winner} onReset={restartGame} openingCode={openingCode} />}
         <GameBoard onSelectSquare={handleSelectSquare} gameBoard={gameBoard} />
       </div>
     </main>
