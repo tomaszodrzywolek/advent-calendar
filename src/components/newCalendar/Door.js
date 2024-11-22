@@ -14,7 +14,7 @@ const Door = ({ doorData: { id, nr, text, img, open, code }, handleClick, openMo
                 <p>{nr}</p>
             </div>
             <div className={open ? "back open" : "back"}>
-                <p onClick={launchGame}>Wyświetl Kod</p>
+                <p onClick={launchGame}>Kliknij aby zagrać. Wygraj aby dostać kod</p>
             </div>
         </StyledDoor>
     )
