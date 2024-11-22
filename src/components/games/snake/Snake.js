@@ -32,6 +32,7 @@ class SnakeGame extends React.Component {
             this.interval = setInterval(() => this.updateSnake(), this.state.speed);
         } else {
             clearInterval(this.interval);
+            winner = undefined
             this.setState({
                 active: false,
                 speed: 120, // ms
@@ -75,7 +76,6 @@ class SnakeGame extends React.Component {
                     // Head has collided with body
                     //   console.log('collide');
                     winner = {winnerName: 'Daria', symbol: 'X'};
-                    this.startStop(true);
                 }
             }
         });
