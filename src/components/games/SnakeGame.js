@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './SnakeGame.css';
 
 const canvasSize = 300;
 const scale = 10;
@@ -30,7 +31,7 @@ function SnakeGame() {
       }
 
       if (isCollision(newHead, newSnake)) {
-        alert("Game Over!");
+        // alert("Game Over!");
         resetGame();
       } else {
         setSnake(newSnake);

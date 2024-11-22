@@ -4,12 +4,19 @@ import Door from "./Door";
 import './NewCalendar.css';
 import Modal from "../Modal";
 
+let selectedDoorId = undefined;
+
 export function NewCalendar() {
     const [doors, setDoors] = useState(createCalendar());
 
     const [showModal, setShowModal] = useState(false);
 
-    const openModal = () => setShowModal(true);
+    const openModal = (doorId) => {
+        console.log(doorId);
+        selectedDoorId = doorId;
+        console.log(selectedDoorId);
+        setShowModal((previousModalState) => !previousModalState);
+    };
     const closeModal = () => setShowModal(false);
 
     const handleOpenDoor = id => {
@@ -27,7 +34,7 @@ export function NewCalendar() {
                 handleClick={handleOpenDoor}
                 openModal={openModal}
             />)}
-            {showModal && <Modal closeModal={closeModal} />}
+            {showModal && <Modal closeModal={closeModal} doorId={selectedDoorId} />}
         </div>
     );
 

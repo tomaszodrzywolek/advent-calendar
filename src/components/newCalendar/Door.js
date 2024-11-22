@@ -4,7 +4,7 @@ import { StyledDoor } from './DoorStyles';
 const Door = ({ doorData: { id, nr, text, img, open }, handleClick, openModal }) => {
 
     function launchGame() {
-        openModal()
+        openModal(id)
     }
 
 
