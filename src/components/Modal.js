@@ -1,7 +1,7 @@
 import React from 'react';
-import SnakeGame from './games/SnakeGame';
 import './Modal.css';
 import MainGame from './games/tic_tac_toe/MainGame';
+import SnakeGame from './games/snake/Snake';
 
 function Modal({ closeModal, doorId, openingCode }) {
 
@@ -12,10 +12,8 @@ function Modal({ closeModal, doorId, openingCode }) {
   );
 
   const snakeGame = (<>
-    <h2>🎮 Snake Game 🎮</h2>
-          <SnakeGame />
-          <p>Use arrow keys to control the snake!</p>
-    </>);
+  <SnakeGame />
+  </>);
 
   console.log(doorId);
 
