@@ -1,0 +1,20 @@
+.hatch-2-modal-content {
+    overflow: hidden;
+    background-color: lightgrey;
+    margin: 0; /* Optional: Remove default margin */
+    padding: 0; /* Optional: Remove default padding */
+}
+
+.space-invaders-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: lightgrey;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Style for the canvas */
+.space-invaders-canvas {
+    background-color: black;
+}
