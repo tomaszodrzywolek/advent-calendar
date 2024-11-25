@@ -6,6 +6,7 @@ import Modal from "../Modal";
 import MainGame from "../games/tic_tac_toe/MainGame";
 import SpaceInvaders from "../games/space-invaders/SpaceInvaders";
 import SnakeGame from "../games/snake/Snake";
+import WhacAMole from "../games/whack-a-mole/WhacAMole";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -29,6 +30,22 @@ export function NewCalendar() {
     setDoors(updatedDoors);
   }
 
+  function selectGame(doorId) {
+    if (doorId === 'hatch-1') {
+      return <MainGame openingCode={code}/>
+    }
+    if (doorId === 'hatch-2') {
+      return <SpaceInvaders/>
+    }
+    if (doorId === 'hatch-3') {
+      return <WhacAMole/>
+    } else {
+      return <SnakeGame/>
+    }
+  }
+
+  const selectedGame = selectGame(selectedDoorId);
+
   return (
     <div className="calendar">
       {doors.map(door => <Door
@@ -38,8 +55,7 @@ export function NewCalendar() {
         openModal={openModal}
       />)}
       {showModal && <Modal closeModal={closeModal} doorId={selectedDoorId}>
-        {selectedDoorId === 'hatch-1' ? <MainGame openingCode={code}/> : (selectedDoorId === 'hatch-2' ?
-          <SpaceInvaders/> : <SnakeGame/>)}
+        {selectedGame}
       </Modal>}
     </div>
   );
