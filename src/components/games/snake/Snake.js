@@ -1,4 +1,4 @@
-import GameOver from '../tic_tac_toe/GameOver';
+import GameOver from '../../GameOver/GameOver';
 import './Snake.css';
 import React from 'react';
 
@@ -212,7 +212,7 @@ class SnakeGame extends React.Component {
                     />
                 ))}
                 <Food top={food[1]} left={food[0]} />
-                {(winner) && <GameOver winner={winner} onReset={() => {this.startStop(true)}} openingCode={123} />}
+                {(winner) && <GameOver hasWon={this.state.score >= 5} onReset={() => {this.startStop(true)}} openingCode={123} />}
             </div>
         );
     }

@@ -3,7 +3,7 @@ import GameBoard from "./GameBoard";
 import Player from "./Player";
 import Log from "./Log";
 import { WINNING_COMBINATIONS } from "./helpers/winning_combinations";
-import GameOver from "./GameOver";
+import GameOver from "../../GameOver/GameOver";
 import './MainGame.css';
 
 const PLAYERS = {
@@ -106,7 +106,7 @@ function MainGame({ openingCode }) {
           <Player initialPlayerName={players.X} symbol="X" isActive={currentPlayer === 'X'} onChangeName={handlePlayerNameChange} />
           <Player initialPlayerName={players.O} symbol="O" isActive={currentPlayer === 'O'} onChangeName={handlePlayerNameChange} />
         </ol>
-        {(winner || hasDraw) && <GameOver winner={winner} onReset={restartGame} openingCode={openingCode} />}
+        {(winner || hasDraw) && <GameOver hasWon={winner !== undefined} onReset={restartGame} openingCode={openingCode} />}
         <GameBoard onSelectSquare={handleSelectSquare} gameBoard={gameBoard} />
       </div>
     </main>
