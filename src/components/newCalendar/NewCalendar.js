@@ -9,6 +9,7 @@ import SnakeGame from "../games/snake/Snake";
 import WhacAMole from "../games/whack-a-mole/WhacAMole";
 import GuessNumber from "../games/guess-number/GuessNumber";
 import MemoryGame from "../games/memory/MemoryGame";
+import PuzzleGame from "../games/puzzle-game/PuzzleGame";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -47,6 +48,9 @@ export function NewCalendar() {
     }
     if (doorId === 'hatch-5') {
       return <MemoryGame/>
+    }
+    if (doorId === 'hatch-6') {
+      return <PuzzleGame/>
     }
 
 
