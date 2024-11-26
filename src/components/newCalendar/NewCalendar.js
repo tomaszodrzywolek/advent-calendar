@@ -35,10 +35,10 @@ export function NewCalendar() {
 
   function selectGame(doorId) {
     if (doorId === 'hatch-1') {
-      return <MainGame openingCode={code}/>
+      return <SnakeGame/>
     }
     if (doorId === 'hatch-2') {
-      return <SpaceInvaders/>
+      return <MemoryGame/>
     }
     if (doorId === 'hatch-3') {
       return <GuessNumber/>
@@ -47,13 +47,14 @@ export function NewCalendar() {
       return <WhacAMole/>
     }
     if (doorId === 'hatch-5') {
-      return <MemoryGame/>
+      return <MainGame openingCode={code}/>
     }
     if (doorId === 'hatch-6') {
       return <PuzzleGame/>
     }
-
-
+    if (doorId === 'hatch-7') {
+      return <SpaceInvaders/>
+    }
     else {
       return <SnakeGame/>
     }
