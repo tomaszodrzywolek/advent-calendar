@@ -1,0 +1,98 @@
+.hatch-5-modal-content {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.memory-game-container {
+  margin: 5rem;
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+.memory-game-container > h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d9534f;
+}
+
+.memory-game-container > p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.memory-card {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.memory-card.flipped .card-front {
+  transform: rotateY(0);
+}
+
+.memory-card.flipped .card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transition: transform 0.5s;
+}
+
+.card-front {
+  background: #f9f9f9;
+  border: 2px solid #28a745;
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  background: #28a745;
+  color: white;
+  transform: rotateY(0);
+}
+
+.game-over {
+  margin-top: 20px;
+}
+
+.reset-button {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background: #b52e2e;
+}

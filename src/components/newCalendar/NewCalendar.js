@@ -8,6 +8,7 @@ import SpaceInvaders from "../games/space-invaders/SpaceInvaders";
 import SnakeGame from "../games/snake/Snake";
 import WhacAMole from "../games/whack-a-mole/WhacAMole";
 import GuessNumber from "../games/guess-number/GuessNumber";
+import MemoryGame from "../games/memory/MemoryGame";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -43,7 +44,13 @@ export function NewCalendar() {
     }
     if (doorId === 'hatch-4') {
       return <WhacAMole/>
-    } else {
+    }
+    if (doorId === 'hatch-5') {
+      return <MemoryGame/>
+    }
+
+
+    else {
       return <SnakeGame/>
     }
   }
