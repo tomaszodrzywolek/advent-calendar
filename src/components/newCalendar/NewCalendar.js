@@ -7,6 +7,7 @@ import MainGame from "../games/tic_tac_toe/MainGame";
 import SpaceInvaders from "../games/space-invaders/SpaceInvaders";
 import SnakeGame from "../games/snake/Snake";
 import WhacAMole from "../games/whack-a-mole/WhacAMole";
+import GuessNumber from "../games/guess-number/GuessNumber";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -38,6 +39,9 @@ export function NewCalendar() {
       return <SpaceInvaders/>
     }
     if (doorId === 'hatch-3') {
+      return <GuessNumber/>
+    }
+    if (doorId === 'hatch-4') {
       return <WhacAMole/>
     } else {
       return <SnakeGame/>
