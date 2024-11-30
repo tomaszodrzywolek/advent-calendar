@@ -49,7 +49,7 @@ const GuessNumber = (props) => {
 
   return (
     <div className="guess-number-container">
-      <h1>Guess the Number</h1>
+      <h1>Zgadnij liczbę</h1>
       <p>Myślę o liczbie od 1 do 100. Czy uda Ci się ją zgadnąć?</p>
       <p>Zostało prób: {maxAttempts - attempts}</p>
       <input
