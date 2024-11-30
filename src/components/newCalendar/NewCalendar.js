@@ -47,18 +47,25 @@ export function NewCalendar() {
     };
     const closeModal = () => setShowModal(false);
 
-    const handleOpenDoor = id => {
-        checkIfCorrectDate(id)
-            .then((isAllowedToOpen) => {
-                if (!isAllowedToOpen) {
-                    console.log('Not allowed to open');
-                    return;
-                }
-                const updatedDoors = doors.map(door =>
-                    door.id === id ? {...door, open: !door.open} : door
-                );
-                setDoors(updatedDoors);
-            });
+    const handleOpenDoor = (id, isOpen) => {
+        const updateDoors = () => {
+            const updatedDoors = doors.map(door =>
+                door.id === id ? {...door, open: !door.open} : door
+            );
+            setDoors(updatedDoors);
+        };
+        if (isOpen) {
+            updateDoors();
+        } else {
+            checkIfCorrectDate(id)
+                .then((isAllowedToOpen) => {
+                    if (!isAllowedToOpen) {
+                        console.log('Not allowed to open');
+                        return;
+                    }
+                    updateDoors();
+                });
+        }
     }
 
     function selectGame(doorId) {
