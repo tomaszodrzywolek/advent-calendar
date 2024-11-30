@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./GuessNumber.css";
 import GameOver from "../../GameOver/GameOver";
 
-const GuessNumber = () => {
+const GuessNumber = (props) => {
   const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
   const [guess, setGuess] = useState("");
   const [message, setMessage] = useState("Zgadniesz wylosowaną liczbę?");
@@ -71,7 +71,7 @@ const GuessNumber = () => {
         Reset
       </button>
       <p className="message">{message}</p>
-      {gameEnded && <GameOver hasWon={message.startsWith('Gratulacje!')} onReset={resetGame} openingCode={123} />}
+      {gameEnded && <GameOver hasWon={message.startsWith('Gratulacje!')} onReset={resetGame} openingCode={props.openingCode} />}
     </div>
   );
 };

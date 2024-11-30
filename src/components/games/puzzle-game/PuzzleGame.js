@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PuzzleGame.css";
 
-const PuzzleGame = () => {
+const PuzzleGame = (props) => {
   const imageSrc = "https://thumbs.dreamstime.com/z/festive-boxer-dog-wearing-santa-hat-christmas-celebration-ai-generated-festive-boxer-dog-wearing-santa-hat-christmas-329125312.jpg?w=992";
   const gridSize = 5; // Define the puzzle grid size (e.g., 5x5)
   const totalPieces = gridSize * gridSize;

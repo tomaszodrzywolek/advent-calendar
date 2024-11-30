@@ -20,7 +20,7 @@ const shuffledCards = () => {
     .sort(() => Math.random() - 0.5);
 };
 
-const MemoryGame = () => {
+const MemoryGame = (props) => {
   const [cardDeck, setCardDeck] = useState(shuffledCards());
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -74,7 +74,7 @@ const MemoryGame = () => {
           </div>
         ))}
       </div>
-      {matchedCards.length >= cards.length && <GameOver hasWon={true} onReset={resetGame} openingCode={123} />}
+      {matchedCards.length >= cards.length && <GameOver hasWon={true} onReset={resetGame} openingCode={props.openingCode} />}
     </div>
   );
 };

@@ -212,7 +212,7 @@ class SnakeGame extends React.Component {
                     />
                 ))}
                 <Food top={food[1]} left={food[0]} />
-                {(winner) && <GameOver hasWon={this.state.score >= 5} onReset={() => {this.startStop(true)}} openingCode={123} />}
+                {(winner) && <GameOver hasWon={this.state.score >= 35} onReset={() => {this.startStop(true)}} openingCode={this.props.openingCode} />}
             </div>
         );
     }

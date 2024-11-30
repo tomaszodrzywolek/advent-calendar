@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import './SpaceInvaders.css';
 import GameOver from "../../GameOver/GameOver";
 
-const SpaceInvaders = () => {
+const SpaceInvaders = (props) => {
   const canvasRef = useRef(null);
   const keysRef = useRef({}); // Use useRef instead of useState for keys
   const [player, setPlayer] = useState({
@@ -371,7 +371,7 @@ const SpaceInvaders = () => {
         tabIndex="0" // Make canvas focusable
         onClick={() => canvasRef.current.focus()} // Focus canvas on click
       ></canvas>
-      {(victory || gameOver) && <GameOver hasWon={victory} onReset={restartGame} openingCode={123}/>}
+      {(victory || gameOver) && <GameOver hasWon={victory} onReset={restartGame} openingCode={props.openingCode}/>}
     </div>
   );
 };
