@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {createCalendar} from "../../helpers/helpers";
-import {fetchTimeFromTimeApi} from "../time-fetchers/fetchTimeHelpers";
+import {fetchTimeFromLocal, fetchTimeFromTimeApi} from "../time-fetchers/fetchTimeHelpers";
 import Door from "./Door";
 import './NewCalendar.css';
 import Modal from "../Modal";
@@ -16,7 +16,7 @@ let selectedDoorId = undefined;
 let code = undefined;
 
 function mapDoorIdToDate(doorId) {
-    const baseDate = new Date(2024,11,1,0,0,0);
+    const baseDate = new Date(2024, 11, 1, 0, 0, 0);
     const match = doorId.match(/^hatch-(\d+)$/);
     const number = parseInt(match[1], 10);
 
@@ -26,19 +26,19 @@ function mapDoorIdToDate(doorId) {
     return newDate;
 }
 
-function checkIfCorrectDate(doorId) {
-    return fetchTimeFromTimeApi()
-        .then(currentDayInPolishTimeZone => {
-                const doorDate = mapDoorIdToDate(doorId);
-                return currentDayInPolishTimeZone >= doorDate;
-            }
-        ).catch(() => false);
-}
-
 export function NewCalendar() {
     const [doors, setDoors] = useState(createCalendar());
-
     const [showModal, setShowModal] = useState(false);
+    const [currentDate, setCurrentDate] = useState(undefined);
+
+    useEffect(() => {
+        const requestCurrentDate = () => {
+            fetchTimeFromTimeApi()
+                .then(currentDayInPolishTimeZone => setCurrentDate(currentDayInPolishTimeZone))
+                .catch(() => fetchTimeFromLocal());
+        };
+        requestCurrentDate();
+    }, []);
 
     const openModal = (doorId, openingCode) => {
         selectedDoorId = doorId;
@@ -47,25 +47,16 @@ export function NewCalendar() {
     };
     const closeModal = () => setShowModal(false);
 
-    const handleOpenDoor = (id, isOpen) => {
-        const updateDoors = () => {
-            const updatedDoors = doors.map(door =>
-                door.id === id ? {...door, open: !door.open} : door
-            );
-            setDoors(updatedDoors);
-        };
-        if (isOpen) {
-            updateDoors();
-        } else {
-            checkIfCorrectDate(id)
-                .then((isAllowedToOpen) => {
-                    if (!isAllowedToOpen) {
-                        console.log('Not allowed to open');
-                        return;
-                    }
-                    updateDoors();
-                });
+    const handleOpenDoor = (id) => {
+        const isAllowedToOpen = currentDate >= mapDoorIdToDate(id);
+        if (!isAllowedToOpen) {
+            console.log('Not allowed to open');
+            return;
         }
+        const updatedDoors = doors.map(door =>
+            door.id === id ? {...door, open: !door.open} : door
+        );
+        setDoors(updatedDoors);
     }
 
     function selectGame(doorId) {
