@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./PuzzleGame.css";
+import GameOver from "../../GameOver/GameOver";
 
 const PuzzleGame = (props) => {
   const imageSrc = "https://thumbs.dreamstime.com/z/festive-boxer-dog-wearing-santa-hat-christmas-celebration-ai-generated-festive-boxer-dog-wearing-santa-hat-christmas-329125312.jpg?w=992";
@@ -38,12 +39,6 @@ const PuzzleGame = (props) => {
 
   const isSolved = board.every((value, index) => value === index);
 
-  useEffect(() => {
-    if (isSolved) {
-      alert("Congratulations! You solved the puzzle!");
-    }
-  }, [isSolved]);
-
   const getPieceStyle = (index) => {
     return {
       backgroundImage: `url(${imageSrc})`,
@@ -71,9 +66,7 @@ const PuzzleGame = (props) => {
           ></div>
         ))}
       </div>
-      <button onClick={handleReset} className="reset-button">
-        Reset Puzzle
-      </button>
+      {isSolved && <GameOver hasWon={isSolved} onReset={handleReset} openingCode={props.openingCode} />}
     </div>
   );
 };
