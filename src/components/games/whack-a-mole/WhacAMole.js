@@ -10,7 +10,7 @@ const WhacAMoleEmbed = () => {
         height="300"
         style={{ width: '100%' }}
         title="Whac-a-Mole w/ React && GSAP 😎🔨"
-        src="https://codepen.io/smashingmag/embed/JjWdLPO?default-tab=html%2Cresult"
+        src="https://codepen.io/smashingmag/embed/JjWdLPO?default-tab=result"
         loading="lazy"
         allowFullScreen={true}
       >
