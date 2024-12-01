@@ -21,7 +21,7 @@ const SpaceInvaders = (props) => {
   const [gameOver, setGameOver] = useState(false);
   const [victory, setVictory] = useState(false);
   const [direction, setDirection] = useState('right');
-  const bombDelayRef = useRef(3000);
+  const bombDelayRef = useRef(4000);
   const animationRef = useRef(null);
 
   // Initialize body styles using useEffect
@@ -269,7 +269,7 @@ const SpaceInvaders = (props) => {
     });
 
     // Continue moving
-    setTimeout(invaderMove, 500);
+    setTimeout(invaderMove, 850);
   };
 
   // Invader shooting logic
