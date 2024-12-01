@@ -13,6 +13,7 @@ import MemoryGame from "../games/memory/MemoryGame";
 import PuzzleGame from "../games/puzzle-game/PuzzleGame";
 import JunctionCross from "../games/junction-cross/JunctionCross";
 import TankGame from "../games/tanks/TankGame";
+import IcyTowerGame from "../games/platformer/IcyTowerGame";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -88,6 +89,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-9') {
             return <TankGame openingCode={code}/>
+        }
+        if (doorId === 'hatch-10') {
+            return <IcyTowerGame openingCode={code}/>
         }else {
             return <SnakeGame/>
         }

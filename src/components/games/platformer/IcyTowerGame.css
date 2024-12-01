@@ -1,0 +1,26 @@
+.hatch-10-modal-overlay > h1,
+.hatch-10-modal-overlay > p {
+    text-align: center;
+    color: white;
+}
+
+.buttons {
+    text-align: center;
+    margin: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #af4261;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.button:hover {
+    background: #922d4d;
+}
