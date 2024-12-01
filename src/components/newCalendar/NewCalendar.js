@@ -11,6 +11,7 @@ import WhacAMole from "../games/whack-a-mole/WhacAMole";
 import GuessNumber from "../games/guess-number/GuessNumber";
 import MemoryGame from "../games/memory/MemoryGame";
 import PuzzleGame from "../games/puzzle-game/PuzzleGame";
+import JunctionCross from "../games/junction-cross/JunctionCross";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -80,6 +81,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-7') {
             return <SpaceInvaders openingCode={code}/>
+        }
+        if (doorId === 'hatch-8') {
+            return <JunctionCross openingCode={code}/>
         } else {
             return <SnakeGame/>
         }

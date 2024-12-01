@@ -9,10 +9,15 @@
     justify-content: center;
     align-items: center;
     z-index: 3;
-  }
-  
-  .modal-content {
-    background-color: #fff;
+}
+
+.modal-content {
+    background: radial-gradient(circle at top,
+    rgba(241, 210, 70, 0.98),
+    rgba(250, 176, 103, 0.87)),
+    url('../img/tic-tac-toe/bg-pattern-dark.png');
+    background-repeat: repeat;
+    background-size: 100% 100%, 30% 30%, 100% 100%;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -21,19 +26,19 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
-  }
-  
-  .modal-content h2 {
+}
+
+.modal-content h2 {
     color: #388e3c;
     font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  .close-button {
+}
+
+.close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 1.5em;
     color: #b71c1c;
     cursor: pointer;
-  }
+}
