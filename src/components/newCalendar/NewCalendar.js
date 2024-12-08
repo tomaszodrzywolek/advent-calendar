@@ -15,6 +15,7 @@ import JunctionCross from "../games/junction-cross/JunctionCross";
 import TankGame from "../games/tanks/TankGame";
 import IcyTowerGame from "../games/platformer/IcyTowerGame";
 import Simon from "../games/simon-says-music/SimonSaysMusical";
+import Hangman from "../games/hangman/Hangman";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -96,6 +97,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-11') {
             return <Simon openingCode={code}/>
+        }
+        if (doorId === 'hatch-12') {
+            return <Hangman openingCode={code}/>
         } else {
             return <SnakeGame/>
         }
