@@ -18,6 +18,7 @@ import Simon from "../games/simon-says-music/SimonSaysMusical";
 import Hangman from "../games/hangman/Hangman";
 import Pong from "../games/pong/Pong";
 import Breakout from "../games/breakout/Breakout";
+import BubbleShooter from "../games/puzzle-bobble/BubbleShooter";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -108,6 +109,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-14') {
             return <Breakout openingCode={code}/>
+        }
+        if (doorId === 'hatch-15') {
+            return <BubbleShooter openingCode={code}/>
         } else {
             return <SnakeGame/>
         }
