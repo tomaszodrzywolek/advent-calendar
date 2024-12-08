@@ -1,0 +1,29 @@
+.hatch-12-modal-content {
+    height: 100%;
+    margin: 0;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pong-container {
+    position: relative;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-over {
+    color: red;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

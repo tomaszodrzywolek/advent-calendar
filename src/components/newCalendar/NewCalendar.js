@@ -16,6 +16,7 @@ import TankGame from "../games/tanks/TankGame";
 import IcyTowerGame from "../games/platformer/IcyTowerGame";
 import Simon from "../games/simon-says-music/SimonSaysMusical";
 import Hangman from "../games/hangman/Hangman";
+import Pong from "../games/pong/Pong";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -100,6 +101,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-12') {
             return <Hangman openingCode={code}/>
+        }
+        if (doorId === 'hatch-13') {
+            return <Pong openingCode={code}/>
         } else {
             return <SnakeGame/>
         }
