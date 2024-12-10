@@ -74,7 +74,7 @@ const BreakoutGame = ({openingCode}) => {
             y: 260,
             width: 5,
             height: 5,
-            speed: 2,
+            speed: 4,
             dx: 0,
             dy: 0
         };
