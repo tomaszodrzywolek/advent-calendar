@@ -20,6 +20,7 @@ import Pong from "../games/pong/Pong";
 import Breakout from "../games/breakout/Breakout";
 import BubbleShooter from "../games/puzzle-bobble/BubbleShooter";
 import MillionaireGame from "../games/millionaire-game/MillionaireGame";
+import WordSearchGame from "../games/word-search/WordSearchGame";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -116,6 +117,9 @@ export function NewCalendar() {
         }
         if (doorId === 'hatch-16') {
             return <MillionaireGame openingCode={code}/>
+        }
+        if (doorId === 'hatch-17') {
+            return <WordSearchGame openingCode={code}/>
         } else {
             return <SnakeGame/>
         }

@@ -1,0 +1,119 @@
+.wordsearch-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial, sans-serif';
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.game-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.words-to-find {
+    flex: 1 1 150px;
+    margin-right: 20px;
+}
+
+.words-to-find h2 {
+    color: #2980b9;
+}
+
+.words-to-find ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.words-to-find li {
+    font-size: 1.1em;
+    margin: 5px 0;
+    color: #34495e;
+}
+
+.words-to-find li.found {
+    text-decoration: line-through;
+    color: #27ae60;
+}
+
+.grid-container {
+    flex: 2 1 400px;
+    overflow-x: auto;
+}
+
+.wordsearch-grid {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.wordsearch-grid td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2c3e50;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ecf0f1;
+    transition: background-color 0.3s;
+}
+
+.wordsearch-grid td:hover {
+    background-color: #bdc3c7;
+}
+
+.wordsearch-grid td.selected {
+    background-color: #f1c40f;
+}
+
+.wordsearch-grid td.found-word {
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #dff0d8;
+    border: 1px solid #3c763d;
+    color: #3c763d;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.win-message {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #d1f7d3;
+    border: 2px solid #27ae60;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.win-message h2 {
+    color: #27ae60;
+}
+
+.restart-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #1f6391;
+}
