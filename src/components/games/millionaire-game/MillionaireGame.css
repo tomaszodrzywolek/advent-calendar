@@ -1,0 +1,94 @@
+.game-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Arial, sans-serif';
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-button {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.option-button:hover {
+    background-color: #0056b3;
+}
+
+.lifelines {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.lifeline-button {
+    background-color: #28a745;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lifeline-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.lifeline-button:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+.message {
+    background-color: #343a40;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    white-space: pre-line;
+}
+
+.game-over {
+    text-align: center;
+}
+
+.restart-button {
+    background-color: #ffc107;
+    border: none;
+    color: #343a40;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #e0a800;
+}
