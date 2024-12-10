@@ -13,7 +13,7 @@ const Pong = () => {
         const maxPaddleY = canvas.height - grid - paddleHeight;
 
         let paddleSpeed = 6;
-        let ballSpeed = 2;
+        let ballSpeed = 6;
 
         const leftPaddle = {
             // start in the middle of the game on the left side
