@@ -22,6 +22,7 @@ import BubbleShooter from "../games/puzzle-bobble/BubbleShooter";
 import MillionaireGame from "../games/millionaire-game/MillionaireGame";
 import WordSearchGame from "../games/word-search/WordSearchGame";
 import ConnectFour from "../games/connectFour/ConnectFour";
+import Battleship from "../games/battleship/Battleship";
 
 let selectedDoorId = undefined;
 let code = undefined;
@@ -124,6 +125,9 @@ export function NewCalendar() {
     }
     if (doorId === 'hatch-18') {
       return <ConnectFour openingCode={code}/>
+    }
+    if (doorId === 'hatch-19') {
+      return <Battleship openingCode={code}/>
     } else {
       return <SnakeGame/>
     }
