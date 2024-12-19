@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/advent-calendar/static/css/main.262fe464.css",
-    "main.js": "/advent-calendar/static/js/main.ea75dc20.js",
+    "main.js": "/advent-calendar/static/js/main.f7560aea.js",
     "static/js/453.caa0a741.chunk.js": "/advent-calendar/static/js/453.caa0a741.chunk.js",
     "static/media/23.jpg": "/advent-calendar/static/media/23.2e6e92f1f3ef2f19c30a.jpg",
     "static/media/22.jpg": "/advent-calendar/static/media/22.6dfb3ba0c6b755fe8a60.jpg",
@@ -41,11 +41,11 @@
     "static/media/s1.jpg": "/advent-calendar/static/media/s1.47ac4fb2f1336b5468bf.jpg",
     "index.html": "/advent-calendar/index.html",
     "main.262fe464.css.map": "/advent-calendar/static/css/main.262fe464.css.map",
-    "main.ea75dc20.js.map": "/advent-calendar/static/js/main.ea75dc20.js.map",
+    "main.f7560aea.js.map": "/advent-calendar/static/js/main.f7560aea.js.map",
     "453.caa0a741.chunk.js.map": "/advent-calendar/static/js/453.caa0a741.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.262fe464.css",
-    "static/js/main.ea75dc20.js"
+    "static/js/main.f7560aea.js"
   ]
 }
