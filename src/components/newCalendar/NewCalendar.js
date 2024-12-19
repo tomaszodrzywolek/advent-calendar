@@ -75,10 +75,10 @@ export function NewCalendar() {
     if (doorId === 'hatch-1') {
       return <SnakeGame openingCode={code}/>
     }
-    if (doorId === 'hatch-2') {
+    if (doorId === 'hatch-2' || doorId === 'hatch-21') {
       return <MemoryGame openingCode={code}/>
     }
-    if (doorId === 'hatch-3') {
+    if (doorId === 'hatch-3' || doorId === 'hatch-22') {
       return <GuessNumber openingCode={code}/>
     }
     if (doorId === 'hatch-4') {
@@ -105,7 +105,7 @@ export function NewCalendar() {
     if (doorId === 'hatch-11') {
       return <Simon openingCode={code}/>
     }
-    if (doorId === 'hatch-12') {
+    if (doorId === 'hatch-12' || doorId === 'hatch-23') {
       return <Hangman openingCode={code}/>
     }
     if (doorId === 'hatch-13') {
@@ -114,7 +114,7 @@ export function NewCalendar() {
     if (doorId === 'hatch-14') {
       return <Breakout openingCode={code}/>
     }
-    if (doorId === 'hatch-15') {
+    if (doorId === 'hatch-15' || doorId === 'hatch-24') {
       return <BubbleShooter openingCode={code}/>
     }
     if (doorId === 'hatch-16') {
@@ -123,10 +123,10 @@ export function NewCalendar() {
     if (doorId === 'hatch-17') {
       return <WordSearchGame openingCode={code}/>
     }
-    if (doorId === 'hatch-18') {
+    if (doorId === 'hatch-19') {
       return <ConnectFour openingCode={code}/>
     }
-    if (doorId === 'hatch-19') {
+    if (doorId === 'hatch-20') {
       return <Battleship openingCode={code}/>
     } else {
       return <SnakeGame/>
